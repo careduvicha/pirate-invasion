@@ -10,10 +10,20 @@ class Cannon{
     }
 
     display(){
+        
+        if(keyIsDown(RIGHT_ARROW)&&this.angle<65){
+            this.angle+=1
+        }
+        if(keyIsDown(LEFT_ARROW)&&this.angle>-43){
+            this.angle-=1
+        }
         push ()
+        translate (this.x,this.y)
+        rotate (this.angle)
         imageMode(CENTER)
-        image(this.cannonImg,this.x,this.y,this.w,this.h)
+        image(this.cannonImg,0,0,this.w,this.h)
         pop ()
         image(this.baseImg,70,20,200,200)
+        
     }
 }
